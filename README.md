@@ -38,6 +38,10 @@ Things you may want to cover:
 ## Wire Frame:
 ![wire frame](wireframes.png)
 
+## Entity Relations Digram Version 1 (ERD)
+
+![ERD](EntityRelationshipDiagram_v1.png)
+
 ## Entity Relations Digram (ERD)
 
 ![ERD](EntityRelationshipDiagram.png)
