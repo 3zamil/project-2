@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :user_interests
-  has_many :interests, through: :user_interests
+  has_many :user_interestts
+  has_many :interests, through: :user_interestts
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

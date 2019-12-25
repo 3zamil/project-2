@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import "compass/css3";
+
+ /* body{
+   padding: 50px;
+ } */

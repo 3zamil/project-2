@@ -1,2 +1,61 @@
-<h1>We Match<h1>
+
+
+
+<main role="main">
+
+
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">WeMatch People</h1>
+          <p class="lead text-muted">Imagen that you find all your interests in on place, connect with in-common people and keep your stuff organized.</p>
+          <p>
+            <a href="#" class="btn btn-primary my-2">Sign Up NOW!</a>
+            <a href="#" class="btn btn-secondary my-2">Want moor?</a>
+          </p>
+        </div>
+      </section>
+
+<div class="card-columns container"> <!-- START OF CARD-GROUP -->
+   <% User.all.each do |user|%>
+
+    <% user.user_interestts.each do |interest| %>
+        <div class="card ">
+        <%if interest.interest.image == "undefined" %>
+                <h5 class="card-title"><%= interest.interest.title %></h5>
+                <blockquote class="blockquote mb-0">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">
+                <small class="text-muted">
+                Someone famous in <cite title="Source Title">Source Title</cite>
+                </small>
+                <button type="button" class="btn btn-primary">Primary</button>
+
+                </footer>
+                </blockquote>
+          
+        <%else%>
+            <img class="card-img-top" src="<%= interest.interest.image %>" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><%= interest.interest.title %></h5>
+                <p class="card-text"><%= interest.interest.description  %>. <%= link_to "Read More", interest.interest.link %></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted"><%=interest.interest.updated_at%></small>
+                <button type="button" class="btn btn-primary">Primary</button>
+
+              </div>
+       
+        <%end%>
+   </div>
+              
+      <%end%>
+  <%end%>
+
+
+  </div><!-- END OF CARD-GROUP -->
+
+
+</main>
+
 

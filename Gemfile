@@ -6,6 +6,9 @@ ruby '2.6.3'
 # Add devise autjentecation to the project
 gem 'devise'
 
+# Add Google-api-client
+gem 'google-api-client', '~> 0.34'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2'
 # Use postgresql as the database for Active Record

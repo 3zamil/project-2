@@ -1,0 +1,34 @@
+
+
+
+<h1>Interests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_interestt.each do |interest| %>
+      <tr>
+        <td><img src='<%= interest.interest.image %>' style='width: 50px'></td>
+        <td><%= interest.user_id %></td>
+        <td><%= interest.interest.description %></td>
+        <td><%= interest.interest.link %></td>
+        
+        <td><%= link_to 'Show', interest %></td>
+        <td> <%= link_to 'Destroy', user_interestt_path(interest), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

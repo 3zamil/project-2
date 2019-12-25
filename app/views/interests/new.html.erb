@@ -1,0 +1,59 @@
+
+<%= form_for @interest, url:{action: "create"} do |f|%>
+  <%= f.label :title%>
+  <%= f.text_field :title, id: "title"%>
+  <%= f.hidden_field :link, id: "link"%>
+  <%= f.hidden_field :description, id: "description"%>
+  <%= f.hidden_field :image, id: "image"%>
+ <%# <input type="text" id="myInput"> %>
+
+<script type="text/javascript">
+
+var config = {
+  'limit': 10,
+  'languages': ['en'],
+//  'languages': ['en', 'ar'],
+
+  // 'types': ['Person', 'Movie'],
+  // 'types': ['Song'],
+  'maxDescChars': 100,
+};
+config['selectHandler'] = function(e) {
+  document.getElementById("link").value = e.row.id;
+  document.getElementById("description").value = e.row.description;
+  document.getElementById("image").value = e.row.Je;
+
+
+
+};
+config['highlightHandler'] = function(e) {
+//   alert(e.row.name + ' highlighted');
+};
+
+  KGSearchWidget("AIzaSyCeT542FtLDFZaSYrCBH6rXgt4_AagjMzQ", document.getElementById("title"), config);
+</script>
+<%= f.submit %>
+<%end%>
+<%# <input type="text" id="myInput">
+
+<script type="text/javascript">
+
+var config = {
+  'limit': 10,
+  'languages': ['en', 'ar'],
+  // 'types': ['Person', 'Movie'],
+  // 'types': ['Song'],
+  'maxDescChars': 100,
+};
+config['selectHandler'] = function(e) {
+//   alert(e.row.name + ' selected');
+console.log(e.row.id);
+
+
+};
+config['highlightHandler'] = function(e) {
+//   alert(e.row.name + ' highlighted');
+};
+
+  KGSearchWidget("AIzaSyCeT542FtLDFZaSYrCBH6rXgt4_AagjMzQ", document.getElementById("myInput"), config);
+</script> %>
