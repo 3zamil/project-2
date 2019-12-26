@@ -18,3 +18,13 @@
 /* body{
    padding: 50px;
  } */
+
+ footer {
+    background-color: darkgrey;
+    color: gray;
+    padding: 5px;
+    margin: 0;
+    font: bold 12px sans-serif;
+    display: flex;
+    justify-content: space-between;
+  }

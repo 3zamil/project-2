@@ -7,6 +7,8 @@ class InterestsController < ApplicationController
 
     end
     def new
+        @user_interestt = current_user.user_interestts
+
         @interest = Interest.new
     end
     def create

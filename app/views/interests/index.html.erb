@@ -18,9 +18,7 @@
     <% @user_interestt.each do |interest| %>
       <tr>
         <td><img src='<%= interest.interest.image %>' style='width: 50px'></td>
-        <td><%= interest.user_id %></td>
-        <td><%= interest.interest.description %></td>
-        <td><%= interest.interest.link %></td>
+        <td><%= interest.interest.title %></td>
         
         <td><%= link_to 'Show', interest %></td>
         <td> <%= link_to 'Destroy', user_interestt_path(interest), method: :delete, data: { confirm: 'Are you sure?' } %> </td>

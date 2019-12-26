@@ -1,9 +1,23 @@
-<h1>hi</h1>
 
-<p id="notice"><%= notice %></p>
+<div> 
+      <img src='<%= @interestx.interest.image %>' style='width: 500px'>
 
-<p>
-  
-      <img src='<%= @interestx.interest.image %>' style='width: 50px'>
+              <div class="card ">
+        <%if @interestx.interest.image == "undefined" %>
+                <h5 class="card-title"><%= @interestx.interest.title %></h5>
+                <blockquote class="blockquote mb-0">
+                <p class="card-text"><%= @interestx.interest.description %></p>
 
-</p>
+                </blockquote>
+          
+        <%else%>
+            <img class="card-img-top" src="<%= @interestx.interest.image %>" alt="Card image cap" style='width: 50%'>
+            <div class="card-body">
+                <h5 class="card-title"><%= @interestx.interest.title %></h5>
+                <p class="card-text"><%= @interestx.interest.description %></p>
+              </div>
+       
+        <%end%>
+   </div>
+   </div>
+

@@ -1,4 +1,5 @@
-
+<div class="card-columns container">
+<div>
 <%= form_for @interest, url:{action: "create"} do |f|%>
   <%= f.label :title%>
   <%= f.text_field :title, id: "title"%>
@@ -16,12 +17,17 @@ var config = {
 
   // 'types': ['Person', 'Movie'],
   // 'types': ['Song'],
-  'maxDescChars': 100,
+  // 'maxDescChars': 100,
 };
 config['selectHandler'] = function(e) {
   document.getElementById("link").value = e.row.id;
-  document.getElementById("description").value = e.row.description;
+  // document.getElementById("s_description").value = e.row.description;
+  document.getElementById("description").value = e.row.rc;
   document.getElementById("image").value = e.row.Je;
+  // document.getElementById("image").value = e.row.rc;
+console.log(e);
+
+  
 
 
 
@@ -34,6 +40,7 @@ config['highlightHandler'] = function(e) {
 </script>
 <%= f.submit %>
 <%end%>
+</div>
 <%# <input type="text" id="myInput">
 
 <script type="text/javascript">
@@ -57,3 +64,32 @@ config['highlightHandler'] = function(e) {
 
   KGSearchWidget("AIzaSyCeT542FtLDFZaSYrCBH6rXgt4_AagjMzQ", document.getElementById("myInput"), config);
 </script> %>
+
+
+
+<div>
+<h1>Interests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_interestt.each do |interest| %>
+      <tr>
+        <td><img src='<%= interest.interest.image %>' style='width: 50px'></td>
+        <td><%= interest.interest.title %></td>
+        
+        <td><%= link_to 'Show', interest %></td>
+        <td> <%= link_to 'Destroy', user_interestt_path(interest), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
